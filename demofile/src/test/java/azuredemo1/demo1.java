@@ -15,7 +15,7 @@ public class demo1 {
 	 
 	@BeforeSuite
 	 public void a_pageload() {
-		System.setProperty("webdriver.chrome.driver","C:\\Selenium\\essentials\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
 		driver= new ChromeDriver();
 		driver.get("https://sprint8-test.ameganow.com/");
 		driver.manage().window().maximize();
