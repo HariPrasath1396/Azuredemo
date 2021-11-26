@@ -23,8 +23,10 @@ public class demo1 {
 	}
 
 	@Test
-	public void b_Login()  {
+	public void b_Login() throws InterruptedException  {
+	Thread.sleep(3000);
 	driver.findElement(By.xpath("//a[contains(text(),'Login')]")).click();
+	Thread.sleep(3000);
 	driver.findElement(By.xpath("//label[contains(text(),'User')]/following::input[1]")).sendKeys("sprint8@yopmail.com");
 	driver.findElement(By.xpath("//label[contains(text(),'User')]/following::input[2]")).sendKeys("Test@123");
 	driver.findElement(By.xpath("//span[contains(text(),'Sign In')]")).click();
@@ -34,7 +36,7 @@ public class demo1 {
 	@Test
 	public void c_view_taxcode() {
 		WebDriverWait wait1 = new WebDriverWait(driver,30);
-		WebElement createpost1 =wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Tax code setup')]")));
+		WebElement createpost1 =wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Tax code setup')]")));
 		driver.findElement(By.xpath("//span[contains(text(),'Tax code setup')]")).click();
 		String text1 = driver.findElement(By.xpath("//span[contains(text(),'Tax code setup')]/following::h1[2]")).getText();
 		System.out.println("Heading 1 :-"+text1);
@@ -56,7 +58,7 @@ public class demo1 {
 	 @Test
 		public void d_logout()  {
 			WebDriverWait wait9 = new WebDriverWait(driver,30);
-			WebElement createpost9 =wait9.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'sprint eight')]")));
+			WebElement createpost9 =wait9.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'sprint eight')]")));
 			driver.findElement(By.xpath("//span[contains(text(),'sprint eight')]")).click();
 			driver.findElement(By.xpath("//a[contains(text(),'Logout')]")).click();
 			//Thread.sleep(millis);
