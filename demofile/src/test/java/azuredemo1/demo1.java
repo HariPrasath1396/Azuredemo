@@ -1,5 +1,7 @@
 package azuredemo1;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,6 +19,7 @@ public class demo1 {
 	 public void a_pageload() {
 		System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
 		driver= new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get("https://sprint8-test.ameganow.com/");
 		driver.manage().window().maximize();
 
@@ -24,9 +27,9 @@ public class demo1 {
 
 	@Test
 	public void b_Login() throws InterruptedException  {
-	Thread.sleep(3000);
+	Thread.sleep(5000);
 	driver.findElement(By.xpath("//a[contains(text(),'Login')]")).click();
-	Thread.sleep(3000);
+	Thread.sleep(5000);
 	driver.findElement(By.xpath("//label[contains(text(),'User')]/following::input[1]")).sendKeys("sprint8@yopmail.com");
 	driver.findElement(By.xpath("//label[contains(text(),'User')]/following::input[2]")).sendKeys("Test@123");
 	driver.findElement(By.xpath("//span[contains(text(),'Sign In')]")).click();
