@@ -8,14 +8,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 public class demo1 {
 	public static WebDriver driver;
 	 
-	@BeforeSuite
+	@BeforeClass
 	 public void a_pageload() {
 		System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
 		driver= new ChromeDriver();
@@ -25,7 +27,7 @@ public class demo1 {
 
 	}
 
-	@Test
+	@Test(priority =1)
 	public void b_Login() throws InterruptedException  {
 	Thread.sleep(3000);
 	driver.findElement(By.xpath("(//div[@class='collapse navbar-collapse']/ul/li)[7]")).click();
@@ -36,7 +38,7 @@ public class demo1 {
 	
 	}
 
-	@Test
+	@Test(priority=2)
 	public void c_view_taxcode() throws InterruptedException {
 		//WebDriverWait wait1 = new WebDriverWait(driver,30);
 		//WebElement createpost1 =wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Tax code setup')]")));
@@ -60,7 +62,7 @@ public class demo1 {
 		//WebElement createpost2 =wait2.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[contains(text(),'Add')]")));
 	}
 	
-	 @Test
+	 @Test(priority=3)
 		public void d_logout() throws InterruptedException  {
 			//WebDriverWait wait9 = new WebDriverWait(driver,30);
 			//WebElement createpost9 =wait9.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'sprint eight')]")));
@@ -72,7 +74,7 @@ public class demo1 {
 			
 	}
 	 
-	@AfterSuite
+	@AfterClass
 		public void e_browserclose()  {
 		driver.close();
 	}
