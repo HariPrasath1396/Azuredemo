@@ -27,12 +27,12 @@ public class demo1 {
 
 	@Test
 	public void b_Login() throws InterruptedException  {
-	Thread.sleep(10000);
-	driver.findElement(By.xpath("//a[contains(text(),'Login')]")).click();
-	Thread.sleep(10000);
-	driver.findElement(By.xpath("//label[contains(text(),'User')]/following::input[1]")).sendKeys("sprint8@yopmail.com");
-	driver.findElement(By.xpath("//label[contains(text(),'User')]/following::input[2]")).sendKeys("Test@123");
-	driver.findElement(By.xpath("//span[contains(text(),'Sign In')]")).click();
+	Thread.sleep(3000);
+	driver.findElement(By.xpath("(//div[@class='collapse navbar-collapse']/ul/li)[7]")).click();
+	Thread.sleep(5000);
+	driver.findElement(By.xpath("//input[@type='email']")).sendKeys("sprint8@yopmail.com");
+	driver.findElement(By.xpath("//input[@type='password']")).sendKeys("Test@123");
+	driver.findElement(By.xpath("//button[@type='submit']")).click();
 	
 	}
 
