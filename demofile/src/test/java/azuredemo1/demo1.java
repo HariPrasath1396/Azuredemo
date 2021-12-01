@@ -15,21 +15,21 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 public class demo1 {
-	public static WebDriver driver;
+	public WebDriver driver;
 	 
 	@BeforeClass
 	 public void a_pageload() {
 		System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
 		driver= new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.get("https://sprint8-test.ameganow.com/");
+		driver.get("https://sprint8-test.ameganow.com");
 		driver.manage().window().maximize();
 
 	}
 
 	@Test(priority =1)
 	public void b_Login() throws InterruptedException  {
-	Thread.sleep(3000);
+	Thread.sleep(5000);
 	driver.findElement(By.xpath("(//div[@class='collapse navbar-collapse']/ul/li)[7]")).click();
 	Thread.sleep(5000);
 	driver.findElement(By.xpath("//input[@type='email']")).sendKeys("sprint8@yopmail.com");
