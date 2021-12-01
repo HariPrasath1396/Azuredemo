@@ -19,7 +19,7 @@ public class demo1 {
 	 
 	@Test(priority=1)
 	 public void a_pageload() {
-		System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","./drivers/chromedriver96v.exe");
 		driver= new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get("https://sprint8-test.ameganow.com");
