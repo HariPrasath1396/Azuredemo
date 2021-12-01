@@ -17,7 +17,7 @@ import org.testng.annotations.Test;
 public class demo1 {
 	public WebDriver driver;
 	 
-	@BeforeClass
+	@Test(priority=1)
 	 public void a_pageload() {
 		System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
 		driver= new ChromeDriver();
@@ -27,7 +27,7 @@ public class demo1 {
 
 	}
 
-	@Test(priority =1)
+	@Test(priority =2)
 	public void b_Login() throws InterruptedException  {
 	Boolean Status = driver.findElement(By.xpath("(//div[@class='collapse navbar-collapse']/ul/li)[7]")).isEnabled();
 	System.out.println(Status);
@@ -39,7 +39,7 @@ public class demo1 {
 	
 	}
 
-	@Test(priority=2)
+	@Test(priority=3)
 	public void c_view_taxcode() throws InterruptedException {
 		//WebDriverWait wait1 = new WebDriverWait(driver,30);
 		//WebElement createpost1 =wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Tax code setup')]")));
@@ -63,7 +63,7 @@ public class demo1 {
 		//WebElement createpost2 =wait2.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[contains(text(),'Add')]")));
 	}
 	
-	 @Test(priority=3)
+	 @Test(priority=4)
 		public void d_logout() throws InterruptedException  {
 			//WebDriverWait wait9 = new WebDriverWait(driver,30);
 			//WebElement createpost9 =wait9.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'sprint eight')]")));
@@ -75,7 +75,7 @@ public class demo1 {
 			
 	}
 	 
-	@AfterClass
+	@Test(priority=5)
 		public void e_browserclose()  {
 		driver.close();
 	}
