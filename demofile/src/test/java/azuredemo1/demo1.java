@@ -29,7 +29,8 @@ public class demo1 {
 
 	@Test(priority =1)
 	public void b_Login() throws InterruptedException  {
-	Thread.sleep(5000);
+	Boolean Status = driver.findElement(By.xpath("(//div[@class='collapse navbar-collapse']/ul/li)[7]")).isEnabled();
+	System.out.println(Status);
 	driver.findElement(By.xpath("(//div[@class='collapse navbar-collapse']/ul/li)[7]")).click();
 	Thread.sleep(5000);
 	driver.findElement(By.xpath("//input[@type='email']")).sendKeys("sprint8@yopmail.com");
